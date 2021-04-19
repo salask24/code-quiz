@@ -100,8 +100,8 @@ getNewQuestion = () => {
         //innerText
     })
 
-    availableQuestions.splice(questionIndex, 1)
-    //removed elements from an array (questionIndex)
+    availableQuestions.splice(questionsIndex, 1)
+    //removed elements from an array (questionsIndex)
     acceptingAnswers = true
 }
 
