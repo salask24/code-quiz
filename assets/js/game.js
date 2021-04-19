@@ -6,7 +6,7 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 //this would gather all the choice-text from html - which are the choice selections
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
-const progressBarFull = document.querySelector('#progressBarFull');
+const progressBarFull = document.getElementById('progressBarFull');
 
 console.log(choices);
 
@@ -66,7 +66,9 @@ startGame = () => {
     questionCounter = 0
     score = 0
     availableQuestions = [...questions]
+    //spread opperator to get all the values from questions
     getNewQuestion()
+    //then create new function below
 }
 
 getNewQuestion = () => {
@@ -75,13 +77,13 @@ getNewQuestion = () => {
 
         return window.location.assign('/end.html')
     }
-//this will keep track of the score
+    //this will keep track of the score
 
 
     questionCounter++;
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     // ex. question 1 of 4 - incrementing by 1 each time
-    progressText.getElementsByClassName.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
     //going to calculate what question we're on and correspond the percentage we're at
 
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
@@ -112,11 +114,12 @@ choices.forEach(choice => {
         const selectedAnswer = selectedChoice.dataset['number'];
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' :
-        //toggle the correct css which is green and red for incorrecr
+            //toggle the correct css which is green and red for incorrect
             'incorrect'
 
         if (classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
+            //increase score by 100 pts
         }
         selectedChoice.parentElement.classList.add(classToApply)
         //add it whenever we get it right
@@ -125,13 +128,14 @@ choices.forEach(choice => {
             selectedChoice.parentElement.classList.remove(classToApply)
             //if we get it wrong we have time to see what we got wrong
             getNewQuestion()
+            //give us the next question
 
         }, 1000)
     })
 })
 
 incrementScore = num => {
-    score += num
+    score +=num
     scoreText.innerText = score
 }
 
