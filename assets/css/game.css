@@ -1,6 +1,7 @@
 body {
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
+
 
 .choice-container {
     display: flex;
@@ -15,8 +16,8 @@ body {
 .choice-container:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(244, 220, 8, 0.6);
-    transition: transform 150ms;
-    transform: scale(1.03);
+    transition: transform 100ms;
+    transform: scale(1.02);
 }
 
 .choice-prefix {
@@ -34,7 +35,7 @@ body {
 }
 
 .incorrect {
-    background: linear-gradient(32deg, rgb(230, 29, 29, 1) 0%, rgb(224,11,11) 100%);
+    background: linear-gradient(32deg, rgb(230, 29, 29, 1) 0%, rgb(224,11,11,1) 100%);
 }
 
 /*Heads up display*/
@@ -60,7 +61,6 @@ body {
     margin-top: 2rem;
     border-radius: 50px;
     overflow: hidden;
-
 }
 
 #progressBarFull {
@@ -69,9 +69,10 @@ body {
     width: 0%;
 }
 
+
+/*Media Query*/
 @media screen and (max-width: 786px) {
     .choice-container {
         min-width: 40rem;
-    }
-    
+    } 
 }
