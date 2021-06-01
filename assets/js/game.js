@@ -74,7 +74,7 @@ getNewQuestion = () => {
 
         return window.location.assign('/code-quiz/end.html')
     }
-    //this will keep track of the scores
+    //this will keep track of the score
 
 
     questionCounter++;
