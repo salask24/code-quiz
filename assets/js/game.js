@@ -1,17 +1,15 @@
 //items we want to target
 
 const question = document.querySelector('#question');
-//querySelector you can targer both class and id
+//querySelector you can target both class and id
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 //this would gather all the choice-text from html - which are the choice selections
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.getElementById('progressBarFull');
 
-console.log(choices);
 
 //scores
-
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
@@ -19,7 +17,6 @@ let questionCounter = 0
 let availableQuestions = []
 
 //Questions
-
 let questions = [
     {
         question:
@@ -50,7 +47,7 @@ let questions = [
     },
     {
         question:
-            "Which of the follong is NOT a JavaScript Data Types?",
+            "Which of the following is NOT a JavaScript Data Types?",
         choice1: "Number",
         choice2: "Null",
         choice3: "String",
@@ -66,7 +63,7 @@ startGame = () => {
     questionCounter = 0
     score = 0
     availableQuestions = [...questions]
-    //spread opperator to get all the values from questions
+    //spread operator to get all the values from questions
     getNewQuestion()
     //then create new function below
 }
